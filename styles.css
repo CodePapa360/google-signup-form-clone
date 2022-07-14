@@ -1,0 +1,304 @@
+:root{
+    --primer-color: #1a73e8;
+}
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+button, .check-control, .check-control input{
+    cursor:pointer;
+}
+
+.wrapper{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.both-side-container{
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.top-container{
+    max-width: 28rem;
+    padding: 2.5rem;
+}
+
+form{
+    margin: 1rem 0;
+}
+
+.heading-wrapper .google-image{
+    margin-bottom: 0.5rem;
+}
+
+.heading-wrapper h1{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #1d1d1d;
+}
+
+.name-field, .pass-field{
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.input-items{
+    position: relative;
+    height: 2.2rem;
+}
+
+.name-field .input-items{
+    margin: 1.6rem 0;
+}
+
+.username-field{
+    width: 100%;
+    height: 2.2rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.username-field span{
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    font-size: 14px;
+    background-color: white;
+    padding-left: 15px;
+    cursor:default;
+    user-select: none;
+}
+
+.username-field::after{
+    content: "You can use letter, numbers & periods";
+    font-size: 12px;
+    padding-left: 10px;
+    color: #424242;
+}
+
+.identy-btn{
+    margin-bottom: 2rem;
+}
+
+.pass-wrapper p{
+    font-size: 12px;
+    color: rgb(70, 70, 70);
+    margin: 5px 0 0 10px;
+}
+
+.pass-wrapper{
+    margin-bottom: 0.7rem;
+}
+
+.actions{
+    margin: 3.5rem 0 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-item{
+    outline: none;
+    padding: 0 10px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    transition: border 0.1s ease-in-out;
+}
+
+.input-label{
+    font-size: 0.85rem;
+    position: absolute;
+    top: 9px;
+    left: 11px;
+    color: #424242;
+    pointer-events: none;
+    transition: top 100ms ease-out, font-size 100ms ease-out, color 100ms ease-in-out;
+}
+
+.input-item:focus{
+    border: 2px solid var(--primer-color);
+}
+
+.input-item:focus~.input-label{
+    color: var(--primer-color);
+}
+
+.input-item:focus~.input-label,
+.input-item:not(:placeholder-shown).input-item:not(:focus)~.input-label{
+    top: -8px;
+    background-color: white;
+    padding: 0 5px;
+    font-size: 0.7rem;
+}
+
+.redirect-sign-in,
+.identy-btn{
+    font-family: inherit;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: var(--primer-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 7px 10px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.redirect-sign-in:hover,
+.identy-btn:hover{
+    background-color: rgba(0, 132, 255, 0.06)
+}
+
+.redirect-sign-in:active,
+.identy-btn:active{
+    background-color: #0061bb3f;
+}
+
+.action-nxt{
+    font-family: inherit;
+    padding: 10px 25px;
+    background-color: var(--primer-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.action-nxt:hover{
+    background-color: #065ac7;
+}
+
+.action-nxt:active{
+    background-color: #2a7deb;
+}
+
+.check-control{
+    font-family: inherit;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 20px;
+    color: #424242;
+    width: fit-content;
+}
+
+.check-control input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.13em;
+
+    display: grid;
+    place-content: center;
+    position: relative;
+  }
+
+
+  .check-control input[type="checkbox"]:checked{
+    border-color: var(--primer-color);
+  }
+
+  .check-control input[type="checkbox"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    visibility: hidden;
+    background-color: var(--primer-color);
+    transition: 120ms visibility ease-in-out;
+
+  }
+
+  .check-control input[type="checkbox"]:checked::before {
+    visibility: visible;
+  }
+
+/* =========== Check mark ===========*/
+
+  .check-control input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    left: 1.5px;
+    top: 2px;
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #ffffff;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  .check-control input[type="checkbox"]:checked::after {
+    transform: scale(1);
+  }
+
+  .right-side-container{
+    text-align: center;
+    display: block;
+    margin: auto 2.5rem auto 0;
+    width: 15rem;
+  }
+
+  .account-image-container{
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  .right-side-container h1{
+    font-size: 1rem;
+    font-weight: 100;
+  }
+
+  .both-side-container{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+
+
+  @media (max-width:900px){
+    .right-side-container{
+        display: none;
+    }
+  }
+
+  @media (max-width:600px){
+
+    .both-side-container{
+        border: none;
+    }
+
+    .name-field, .pass-field{
+        display: block;
+    }
+
+    .pass-wrapper .input-items:nth-child(1){
+        margin-bottom: 1.6rem;
+    }
+
+  }
