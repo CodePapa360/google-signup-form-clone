@@ -1,2 +1,9 @@
 # google-signup-form-clone
-Google sign up form built with only HTML and CSS.
+This is a cloned the signup form of Google.
+
+#Technology used
+HTML
+CSS
+
+#GitHub page
+https://codepapa360.github.io/google-signup-form-clone/
